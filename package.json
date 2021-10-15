@@ -1,0 +1,11 @@
+{
+  "name": "guia_perguntas",
+  "version": "1.0.0",
+  "description": "Plataforma de perguntas e respostas com base na Formação NODE.js do Guia do Programador.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "victorsouza19",
+  "license": "ISC"
+}

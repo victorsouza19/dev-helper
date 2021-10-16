@@ -1,12 +1,12 @@
-<nav class="navbar bg-light">
+<nav class="navbar">
   <a class="navbar-brand ml-1" href="/">
     <span>{dev}.</span><span>helper</span>
   </a>
   <div class="btn-group btn-group-toggle mr-1" data-toggle="buttons">
-    <label class="btn btn-outline-primary active">
+    <label id="label-light" class="btn btn-outline-primary">
       <input onClick="toggleSelectMode(event)" type="radio" name="options" id="light" autocomplete="off" checked><img id= "nav-icon" src="/img/sun.png" alt="light-mode">
     </label>
-    <label class="btn btn-outline-primary">
+    <label id="label-dark" class="btn btn-outline-primary">
       <input onClick="toggleSelectMode(event)" type="radio" name="options" id="dark" autocomplete="off"> <img id= "nav-icon" src="/img/moon.png" alt="dark-mode">
     </label>
 </nav>

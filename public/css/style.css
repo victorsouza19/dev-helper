@@ -2,25 +2,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;600&display=swap');
 
 :root{
+  --nav-color: #f8f9fa;
   --bg-color: #F2EBF0;
   --button-blue: #0528F2;
+  --nav-title: #0528F2;
   --medium-blue: #0540F2;
   --blue-text: #1D64F2;
   --low-blue: #7EA5F2;
   --text-title: #212529;
+  --card-title: #212529;
 }
 
 .dark-mode:root{
+  --nav-color: #0f1849;
   --bg-color: #070C26;
   --button-blue: #0528F2;
+  --nav-title: #f8f9fa;
   --medium-blue: #0540F2;
   --blue-text: #1D64F2;
   --low-blue: #7EA5F2;
   --text-title: #ebedf6;
+  --card-title: #FFF;
+  --bg-card: #212529;
 
 }
 
-/* RGBA
+/* RGBA (if necessary)
 color: rgba(242, 234, 239, 1);
 color: rgba(4, 40, 242, 1);
 color: rgba(4, 64, 242, 1);
@@ -28,43 +35,24 @@ color: rgba(29, 100, 242, 1);
 rgba(125, 164, 242, 1); 
 */
 
-/* CSS Alternative
-Color Theme Swatches in Hex
-.Onfido-1-hex { color: #131159; }
-.Onfido-2-hex { color: #1637F2; }
-.Onfido-3-hex { color: #070C26; }
-.Onfido-4-hex { color: #3D58F2; }
-.Onfido-5-hex { color: #F26363; }
-
-Color Theme Swatches in RGBA
-.Onfido-1-rgba { color: rgba(19, 16, 89, 1); }
-.Onfido-2-rgba { color: rgba(21, 54, 242, 1); }
-.Onfido-3-rgba { color: rgba(7, 11, 38, 1); }
-.Onfido-4-rgba { color: rgba(60, 87, 242, 1); }
-.Onfido-5-rgba { color: rgba(242, 99, 99, 1); }
-*/
-
-
 body{
   background-color: var(--bg-color);
-  
+  color: var(--text-title);
 }
 
 body nav a span{
   font-family: 'Inconsolata', monospace;
-  color: var(--button-blue);
+  color: var(--nav-title);
   font-weight: 600;
   font-size: 1.2em;
 }
 
 body nav a span:last-child{
-  font-family: 'Inconsolata', monospace;
-  color: var(--button-blue);
   font-weight: 400;
   font-size: 1.2em;
 }
 
-#question-form{
+.question-form{
   margin-top: 5vh;
 }
 
@@ -84,14 +72,39 @@ body nav a span:last-child{
   max-height: 1.2em;
 }
 
-body h1{
-  color: var(--text-title);
-}
+body h3,
+#footer-info{
+  color: var(--card-title);
+} 
 
 body hr{
   background-color: var(--text-title);
 }
 
-body #subtitle{
-  color: var(--text-title);
+body nav,
+.card-items, 
+.question-form{
+  background-color: var(--nav-color) !important;
 }
+
+body .footer-flex{
+  display: flex;
+  flex-direction: column;
+}
+
+body .user-info{
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+@media screen and (min-width: 425px){
+  body .footer-flex{
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+
+
+

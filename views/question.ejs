@@ -5,7 +5,7 @@
       <div class="user d-flex align-items-center justify-content-end">
         <% if (question.username) { %>
           <span id="label-comment"><%= question.username %></span>
-          <img id= "github-img"class="img-fluid rounded-pill ml-2" src="https://github.com/<%= question.username %>.png" alt="user-image">
+          <img id= "github-img"class="img-fluid rounded-pill ml-2" src="https://github.com/<%= question.username %>.png" onerror="this.src='/img/user-icon.jpg'" alt="user-image">
         <% } else { %>
           <span class="" id="label-comment">Dev anônimo(a)</span>
           <img id= "github-img" class="img-fluid rounded-pill ml-2" src="/img/user-icon.jpg" alt="user-image"> 
@@ -15,6 +15,36 @@
     
     <p id="subtitle"><%= question.description %></p>
     <hr>
+    <form method="POST" action="/response">
+      <h3>Responda</h3>
+      <label class="mt-2">Username do GitHub<span class="ml-4" id="label-comment">é opcional (:</span></label>
+          <input class="form-control" type="text" placeholder="victorsouza19" name="username">
+      <label class="mt-2">Resposta</label>
+      <textarea class="form-control" name="body" placeholder="Digite sua resposta" required></textarea>
+      <input type="hidden" name="questionId" value="<%= question.id%>">
+      <button type="submit" class="btn btn-primary mt-4">Responder</button>
+    </form>
+    <% if (responses.length > 0) { %>
+    <h3 class="mt-5">Respostas</h3>
+    <hr>
+    <% } %>
+    <% responses.forEach(i => { %>
+      <div class="card mt-3 card-items">
+        <div class="card-body">
+          <p><%= i.body %></p>
+          <div class="user d-flex align-items-center justify-content-end">
+            <% if (i.username) { %>
+              <span id="label-comment"><%= i.username %></span>
+              <img id= "github-img"class="img-fluid rounded-pill ml-2" src="https://github.com/<%= i.username %>.png" onerror="this.src='/img/user-icon.jpg'" alt="user-image">
+            <% } else { %>
+              <span class="" id="label-comment">Dev anônimo(a)</span>
+              <img id= "github-img" class="img-fluid rounded-pill ml-2" src="/img/user-icon.jpg" alt="user-image"> 
+            <% } %>
+          </div>
+        </div>
+      </div>
+    <% }) %>
   </div>
+  <%- include('partials/footer-info.ejs') %>
 </body>
 <%- include('partials/footer.ejs') %>

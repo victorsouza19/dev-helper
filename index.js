@@ -3,6 +3,7 @@ const express = require("express");
 const app = express();
 const connection = require("./database/database");
 const Questions = require("./database/Questions");
+const Response = require("./database/Responses");
 
 // database connection
 connection

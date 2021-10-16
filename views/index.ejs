@@ -12,24 +12,27 @@
     <hr>
     
     <% questions.forEach((i) => { %>
-      <div class="card mt-4">
+      <div class="card mt-4 card-items">
         <div class="card-body">
           <h3><%= i.title %></h3>
         </div>
-        <div class="card-footer d-flex justify-content-between">
+        <div class="card-footer footer-flex">
           <a href="/question/<%= i.id %>"><button class="btn btn-primary">Responder</button></a>
           <div class="user">
+            <div class="user-info">
             <% if (i.username) { %>
               <span id="label-comment"><%= i.username %></span>
-              <img id= "github-img"class="img-fluid rounded-pill ml-2" src="https://github.com/<%= i.username %>.png" alt="user-image">
+              <img id= "github-img"class="img-fluid rounded-pill ml-2" src="https://github.com/<%= i.username %>.png" onerror="this.src='/img/user-icon.jpg'" alt="user-image">
             <% } else { %>
               <span id="label-comment">Dev anônimo(a)</span>
               <img id= "github-img" class="img-fluid rounded-pill ml-2" src="/img/user-icon.jpg" alt="user-image"> 
             <% } %>
+            </div>
           </div>
         </div>
       </div>
     <%})%>
   </div>
+  <%- include('partials/footer-info.ejs') %>
 </body>
 <%- include('partials/footer.ejs') %>

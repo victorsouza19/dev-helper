@@ -1,24 +1,31 @@
+const { urlencoded } = require("express");
 const express = require("express");
 const app = express();
+const connection = require("./database/database");
+const Questions = require("./database/Questions");
+
+// database connection
+connection
+  .authenticate()
+  .then(() => {
+    console.log("Database connected!")
+  })
+  .catch((error) =>{
+    console.log(error);
+  })
 
 // configurando o ejs como view engine
 app.set('view engine', 'ejs');
+
+// configurando o diretório onde os arquivos serão visíveis
 app.use(express.static('public'));
 
-// criando rotas
-app.get("/:nome/:lang", (req,res) => {
-  var nome = req.params.nome;
-  var lang = req.params.lang;
-  var exibirMsg = true;
+// configurando o recebimento dos dados do formulário
+app.use(urlencoded({extended: true}));
+app.use(express.json());
 
-  var perguntas = [
-    {description: "O que é Node.JS?", number: 1},{description: "O que é Javascript?", number: 2},{description: "O que é EJS?", number: 3}
-  ];
-  res.render("index", {
-    nome: nome, lang: lang, msg: exibirMsg, 
-    produtos: perguntas
-  });
-});
+//apontando as rotas
+app.use('/', require("./routes/pages"));
 
 // rodando o servidor
 app.listen(8080, () => {

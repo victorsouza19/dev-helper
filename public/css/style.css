@@ -1,3 +1,97 @@
-h1{
-  color: red;
+/* title font import */
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;600&display=swap');
+
+:root{
+  --bg-color: #F2EBF0;
+  --button-blue: #0528F2;
+  --medium-blue: #0540F2;
+  --blue-text: #1D64F2;
+  --low-blue: #7EA5F2;
+  --text-title: #212529;
+}
+
+.dark-mode:root{
+  --bg-color: #070C26;
+  --button-blue: #0528F2;
+  --medium-blue: #0540F2;
+  --blue-text: #1D64F2;
+  --low-blue: #7EA5F2;
+  --text-title: #ebedf6;
+
+}
+
+/* RGBA
+color: rgba(242, 234, 239, 1);
+color: rgba(4, 40, 242, 1);
+color: rgba(4, 64, 242, 1);
+color: rgba(29, 100, 242, 1);
+rgba(125, 164, 242, 1); 
+*/
+
+/* CSS Alternative
+Color Theme Swatches in Hex
+.Onfido-1-hex { color: #131159; }
+.Onfido-2-hex { color: #1637F2; }
+.Onfido-3-hex { color: #070C26; }
+.Onfido-4-hex { color: #3D58F2; }
+.Onfido-5-hex { color: #F26363; }
+
+Color Theme Swatches in RGBA
+.Onfido-1-rgba { color: rgba(19, 16, 89, 1); }
+.Onfido-2-rgba { color: rgba(21, 54, 242, 1); }
+.Onfido-3-rgba { color: rgba(7, 11, 38, 1); }
+.Onfido-4-rgba { color: rgba(60, 87, 242, 1); }
+.Onfido-5-rgba { color: rgba(242, 99, 99, 1); }
+*/
+
+
+body{
+  background-color: var(--bg-color);
+  
+}
+
+body nav a span{
+  font-family: 'Inconsolata', monospace;
+  color: var(--button-blue);
+  font-weight: 600;
+  font-size: 1.2em;
+}
+
+body nav a span:last-child{
+  font-family: 'Inconsolata', monospace;
+  color: var(--button-blue);
+  font-weight: 400;
+  font-size: 1.2em;
+}
+
+#question-form{
+  margin-top: 5vh;
+}
+
+#label-comment{
+  font-family: 'Inconsolata', monospace;
+  color: var(--low-blue);
+  font-size: 0.9em;
+}
+
+#github-img{
+  max-width: 2.5rem;
+  max-height: 2.5rem;
+}
+
+#nav-icon{
+  max-width: 1.2em;
+  max-height: 1.2em;
+}
+
+body h1{
+  color: var(--text-title);
+}
+
+body hr{
+  background-color: var(--text-title);
+}
+
+body #subtitle{
+  color: var(--text-title);
 }

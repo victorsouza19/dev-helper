@@ -1,27 +1,35 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dev Helper :)</title>
-  <link rel="stylesheet" href="/css/style.css">
-</head>
+<%- include('partials/header.ejs') %>
 <body>
-  <h1>Dev Helper :)</h1>
-  <hr>
-  <h3>Olá <%= nome%>, sua linguagem favorita é <%= lang%>!</h3>
-  <h3>Lista de perguntas:</h3>
-  <% if(msg) { %>
-  <h4>Nenhum conteúdo encontrado!</h4>
-  <% } %>
+  <%- include('partials/navbar.ejs') %>
+  <div class="container mb-4">
+    <div class="d-flex justify-content-between align-items-center mt-4">
+    <h1>Perguntas</h1>
+    <a class="btn btn-primary" href="/question">Perguntar</a>
 
-  <% produtos.forEach((i) => { %>
-    <hr>
-    Id: <%= i.number %> - 
-    <%= i.description %>
     
-  <% }) %>
-  
+    </div>
+    
+    <hr>
+    
+    <% questions.forEach((i) => { %>
+      <div class="card mt-4">
+        <div class="card-body">
+          <h3><%= i.title %></h3>
+        </div>
+        <div class="card-footer d-flex justify-content-between">
+          <a href="/question/<%= i.id %>"><button class="btn btn-primary">Responder</button></a>
+          <div class="user">
+            <% if (i.username) { %>
+              <span id="label-comment"><%= i.username %></span>
+              <img id= "github-img"class="img-fluid rounded-pill ml-2" src="https://github.com/<%= i.username %>.png" alt="user-image">
+            <% } else { %>
+              <span id="label-comment">Dev anônimo(a)</span>
+              <img id= "github-img" class="img-fluid rounded-pill ml-2" src="/img/user-icon.jpg" alt="user-image"> 
+            <% } %>
+          </div>
+        </div>
+      </div>
+    <%})%>
+  </div>
 </body>
-</html>
+<%- include('partials/footer.ejs') %>

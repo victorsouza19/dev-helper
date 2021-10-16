@@ -1,0 +1,20 @@
+<%- include('partials/header.ejs') %>
+<body>
+  <%- include('partials/navbar.ejs') %>
+  <div class="container mt-4">
+      <div class="user d-flex align-items-center justify-content-end">
+        <% if (question.username) { %>
+          <span id="label-comment"><%= question.username %></span>
+          <img id= "github-img"class="img-fluid rounded-pill ml-2" src="https://github.com/<%= question.username %>.png" alt="user-image">
+        <% } else { %>
+          <span class="" id="label-comment">Dev anônimo(a)</span>
+          <img id= "github-img" class="img-fluid rounded-pill ml-2" src="/img/user-icon.jpg" alt="user-image"> 
+        <% } %>
+      </div>
+      <h1 id="title"><%= question.title %></h1>
+    
+    <p id="subtitle"><%= question.description %></p>
+    <hr>
+  </div>
+</body>
+<%- include('partials/footer.ejs') %>

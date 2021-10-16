@@ -1,0 +1,23 @@
+<%- include('partials/header.ejs') %>
+<body>
+  <%- include('partials/navbar.ejs') %>
+  <div class="container">
+    <div class="card" id="question-form">
+      <div class="card-header">
+        <h3>Faça sua pergunta!</h3>
+      </div>
+      <div class="card-body">
+        <form method="POST" action="/question/save">
+          <label class="mt-2">Username do GitHub<span class="ml-4" id="label-comment">é opcional (:</span></label>
+          <input class="form-control" type="text" placeholder="victorsouza19" name="username">
+          <label class="mt-2">Título</label>
+            <input class="form-control" type="text" placeholder="Título" name="title">
+          <label class="mt-2">Descrição</label>
+            <textarea class="form-control"  placeholder="Descreva sua pergunta aqui" name="description"></textarea>
+          <button class="btn btn-primary mt-4">Perguntar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+<%- include('partials/footer.ejs') %>

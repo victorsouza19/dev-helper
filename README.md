@@ -35,7 +35,7 @@
 
 <br><br>
 
-> Tela mobile
+> Telas mobile
 > 
 <div style="display= "flex"; justify-content: "space-between"; ">
 <img src="https://user-images.githubusercontent.com/71740612/137603018-855d62e0-165a-4e7b-88a5-5e1f6c14f58d.png" alt="devhelper-photo"> 
@@ -59,6 +59,11 @@
  <br>
  
  Este é um respositório público, logo você está livre para ter uma cópia do projeto,  e se achar algum problema ou tiver alguma contribuição, pode fazer um **fork** do projeto, e sinta-se a vontade para fazer um **pull request**.
+ 
+ Para rodar a aplicação, você precisará:
+ - Ajustar o arquivo <code>database.js</code> de acordo com o seu banco de dados.
+ - Importar as bibliotecas do node e express com <code>npm install express</code> na pasta do projeto.
+ - É recomendado ter o nodemon instalado na sua máquina, caso não tenha, pode instalar globalmente com  <code>npm install -g nodemon</code> e rodar o arquivo index.js para iniciar o servidor express com o comando <code>nodemon index.js</code> na pasta raiz do projeto. (Caso não tenha basta executar  <code>node index.js</code>).
 
 <br><br><br>
 <div align="center">

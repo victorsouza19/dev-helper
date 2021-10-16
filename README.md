@@ -5,7 +5,7 @@
   </a>
 </p>
 
-<h4> Este é um repositório focado em aprofundar os estudos em Node.JS, e nele desenvolvemos uma plataforma de perguntas e respostas(estilo Yahoo e ask.fm) responsivam incluindo  algumas funcionalidades a mais, como o dark mode, onde o usuário pode optar por qual tema deseja. </h4>
+<h4> Este é um repositório focado em aprofundar os estudos em Node.JS, e nele desenvolvemos uma plataforma de perguntas e respostas(estilo Yahoo e ask.fm) responsiva incluindo  algumas funcionalidades a mais, como o dark mode, onde o usuário pode optar por qual tema deseja. Este projeto foi criado com base no protótipo da Formação NodeJS, proporcionada pelo Victor Lima, do canal Guia do Programador. </h4>
 
 
   

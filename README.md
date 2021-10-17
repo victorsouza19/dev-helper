@@ -62,8 +62,8 @@
  
  Para rodar a aplicação, você precisará:
  - Ajustar o arquivo <code>database.js</code> de acordo com o seu banco de dados.
- - Importar as bibliotecas do node e express com <code>npm install express</code> na pasta do projeto.
- - É recomendado ter o nodemon instalado na sua máquina, caso não tenha, pode instalar globalmente com  <code>npm install -g nodemon</code> e rodar o arquivo index.js para iniciar o servidor express com o comando <code>nodemon index.js</code> na pasta raiz do projeto. (Caso não tenha basta executar  <code>node index.js</code>).
+ - Importar as bibliotecas e dependências com <code>npm install</code> na pasta do projeto.
+ - É recomendado ter o nodemon instalado na sua máquina, caso não tenha, pode instalar globalmente com  <code>npm install -g nodemon</code> e rodar o arquivo index.js para iniciar o servidor express com o comando <code>nodemon index.js</code> na pasta raiz do projeto. (Caso não tenha basta executar  <code>node index.js</code>, mas caso você faça alterações terá que reiniciar o servidor novamente).
 
 <br><br><br>
 <div align="center">
